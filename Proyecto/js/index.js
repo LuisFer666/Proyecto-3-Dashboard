@@ -2,8 +2,6 @@ const currencyDate = document.getElementById("currency-date")
 const btnDate = document.getElementById("btn-date")
 var ctx = document.getElementById('myChart').getContext('2d');
 
-
-
 const state = {
     label: "hola",
     rates: "",

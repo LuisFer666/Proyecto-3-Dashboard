@@ -1,8 +1,7 @@
 {
   "name": "demo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "dependencies": {
     "axios": "^0.21.1"
   },
@@ -12,5 +11,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
