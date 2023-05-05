@@ -1,6 +1,23 @@
-const currencyDate = document.getElementById("currency-date")
-const btnDate = document.getElementById("btn-date")
+import { mostrarPrueba } from '../prueba.js';
+import { obtenerCuentas } from './modules/cuentas.js';
+
+const currencyDate = document.getElementById("currency-date");
+const btnDate = document.getElementById("btn-date");
 var ctx = document.getElementById('myChart').getContext('2d');
+
+const btnEstadisticas = document.getElementById('btnEstadisticas');
+btnEstadisticas.addEventListener('click', () => {
+    mainPage.innerHTML = '';
+    mainPage.appendChild(mostrarPrueba());
+});
+
+const btnCuentas = document.getElementById('btnCuentas');
+btnCuentas.addEventListener('click', () => {
+    mainPage.innerHTML = '';
+    mainPage.appendChild(obtenerCuentas());
+});
+
+var mainPage = document.getElementById("mainPage");
 
 const state = {
     label: "hola",
@@ -9,11 +26,10 @@ const state = {
     dataValues: ""
 }
 
-
-function fetchData(date){
+function fetchData(date) {
     console.log(date)
     let dateToLookFor = date
-    if(!dateToLookFor){
+    if (!dateToLookFor) {
         dateToLookFor = "latest"
     }
 
@@ -25,10 +41,10 @@ function fetchData(date){
         state.label = "Tipo de cambio EUR"
         state.labels = Object.keys(data.rates)
         state.dataValues = Object.values(data.rates)
-    })   
+    })
 }
 
-function generateChart(dataLabel, dataLabels, dataValues){
+function generateChart(dataLabel, dataLabels, dataValues) {
     console.log(dataLabels)
     let myChart = new Chart(ctx, {
         type: 'bar',
@@ -93,7 +109,7 @@ const update = () => {
 
 const init = async () => {
     await fetchData()
-    await generateChart(state.label,state.labels,state.dataValues)
+    await generateChart(state.label, state.labels, state.dataValues)
 }
 
 init()
