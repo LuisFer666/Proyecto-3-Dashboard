@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.html",
   "dependencies": {
-    "axios": "^0.21.1"
+    "octokit": "^2.0.14"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
