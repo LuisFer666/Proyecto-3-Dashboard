@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.html",
   "dependencies": {
-    "octokit": "^2.0.14"
+    "@octokit/auth-app": "^4.0.13",
+    "octokit": "^2.0.19"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
